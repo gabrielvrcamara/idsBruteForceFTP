@@ -46,6 +46,9 @@ def unBanIp(ip_):
         file.writelines(f)
     with open('log-ids.txt', 'a') as file:                              # Registra o log do ip desbanido.
         file.write(" [UNBAN] - : ip:" + ip + " - Time: NULL stop: NULL \n")
+    for i in ip_table_ban:
+        if ip == i[0]:
+            ip_table_ban.remove(ip)
 
 #
 # Bane um ip.
